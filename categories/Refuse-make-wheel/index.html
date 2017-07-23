@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>杂文 | 十六少年渴望环游世界</title>
+  <title>Refuse make wheel | 十六少年渴望环游世界</title>
   <meta name="author" content="Andy">
   
   
@@ -201,7 +201,7 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title category">杂文</h2>
+<h2 class="archive-title category">Refuse make wheel</h2>
 
 
   
@@ -223,18 +223,60 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-07-23T03:48:19.000Z"><a href="/2017/07/23/Come-Back/">Jul 23 2017</a></time>
+        <time datetime="2016-09-28T09:27:45.000Z"><a href="/2016/09/28/Config_Hexo/">Sep 28 2016</a></time>
       
       
   
-    <h1 class="title"><a href="/2017/07/23/Come-Back/">Come_Back</a></h1>
+    <h1 class="title"><a href="/2016/09/28/Config_Hexo/">Config_Hexo</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="来个头像避避邪233333"><a href="#来个头像避避邪233333" class="headerlink" title="来个头像避避邪233333"></a>来个头像避避邪233333</h1><p><img src="http://wx2.sinaimg.cn/small/006lGFvfgy1fhts83xufqj30hs0nojs6.jpg" alt=""></p>
+        <h4 id="软件需求"><a href="#软件需求" class="headerlink" title="软件需求"></a>软件需求</h4><ul>
+<li>git</li>
+<li>Node.js</li>
+</ul>
+<h4 id="hexo基本安装配置"><a href="#hexo基本安装配置" class="headerlink" title="hexo基本安装配置"></a>hexo基本安装配置</h4><ul>
+<li><p>安装cnpm(淘宝镜像):</p>
+<ul>
+<li>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></li>
+</ul>
+</li>
+<li><p>安装hexo:</p>
+<ul>
+<li>cnpm install -g hexo-cli</li>
+<li>cnpm install hexo -save</li>
+<li>hexo -v</li>
+</ul>
+</li>
+<li><p>本地初始化：</p>
+<ul>
+<li>hexo init</li>
+</ul>
+</li>
+<li><p>生成安装器： cnpm install</p>
+</li>
+</ul>
+<hr>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><pre><code>本地测试：
+    hexo clean
+    hexo g
+    hexo s
 
+发布博客相关设置：
+    安装hexo git插件
+    npm install hexo-deployer-git --save
+
+    设置用户名，密码：
+    git config --global user.name &quot;你的用户名&quot;
+    git config --global user.email &quot;你的邮箱&quot;
+
+发布：
+    hexo clean
+    hexo g
+    hexo d
+</code></pre>
       
     </div>
     <footer>

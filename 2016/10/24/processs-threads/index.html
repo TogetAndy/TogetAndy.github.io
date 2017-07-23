@@ -5,13 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>杂文 | 十六少年渴望环游世界</title>
+  <title>processs-threads illustrate | 十六少年渴望环游世界</title>
   <meta name="author" content="Andy">
+  
+  <meta name="description" content="Before we start talking about threads, processes, time slices, and all the other wonderful “scheduling concepts,” let’s establish an analogy.What I wa">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="processs-threads illustrate"/>
   <meta property="og:site_name" content="十六少年渴望环游世界"/>
 
   
@@ -200,12 +202,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title category">杂文</h2>
-
-
-  
-    <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
     <div class="gallery">
   <div class="photoset">
@@ -223,25 +220,57 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-07-23T03:48:19.000Z"><a href="/2017/07/23/Come-Back/">Jul 23 2017</a></time>
+        <time datetime="2016-10-24T09:38:05.000Z"><a href="/2016/10/24/processs-threads/">Oct 24 2016</a></time>
       
       
   
-    <h1 class="title"><a href="/2017/07/23/Come-Back/">Come_Back</a></h1>
+    <h1 class="title">processs-threads illustrate</h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="来个头像避避邪233333"><a href="#来个头像避避邪233333" class="headerlink" title="来个头像避避邪233333"></a>来个头像避避邪233333</h1><p><img src="http://wx2.sinaimg.cn/small/006lGFvfgy1fhts83xufqj30hs0nojs6.jpg" alt=""></p>
-
+        <p>Before we start talking about threads, processes, time slices, and all the other wonderful “scheduling concepts,” let’s establish an analogy.<br>What I want to do first is illustrate how threads and processes work.<br>The best way I can think of (short of digging into the design of a realtime system) is to imagine our threads and processes in some kind of situation.</p>
+<p>A process as a house</p>
+<p>Let’s base our analogy for processes and threads using a regular, everyday object — a house.<br>A house is really a container, with certain attributes (such as the amount of floor space, the number of bedrooms, and so on).<br>If you look at it that way, the house really doesn’t actively do anything on its own — it’s a passive object.<br>This is effectively what a process is. We’ll explore this shortly.</p>
+<p>The occupants as threads</p>
+<p>The people living in the house are the active objects — they’re the ones using the various rooms, watching TV,<br>cooking, taking showers, and so on. We’ll soon see that’s how threads behave.</p>
+<p>Single threaded</p>
+<p>If you’ve ever lived on your own, then you know what this is like — you know that you can do anything you want in the house at any time,<br>because there’s nobody else in the house. If you want to turn on the stereo, use the washroom, have dinner — whatever — you just go ahead and do it.</p>
+<p>Multi threaded</p>
+<p>Things change dramatically when you add another person into the house.<br>Let’s say you get married, so now you have a spouse living there too.<br>You can’t just march into the washroom at any given point; you need to check first to make sure your spouse isn’t in there!</p>
+<p>If you have two responsible adults living in a house,<br>generally you can be reasonably lax about “security” — you know that the other adult will respect your space,<br>won’t try to set the kitchen on fire (deliberately!), and so on.</p>
+<p>Now, throw a few kids into the mix and suddenly things get a lot more interesting.</p>
+<pre><code>source:    http://www.qnx.com/developers/docs/6.4.1/neutrino/getting_started/s1_procs.html#Fundamentals
+        http://www.ruanyifeng.com/blog/2016/10/online_education.html
+</code></pre>
       
     </div>
     <footer>
       
         
+  
+  <div class="categories">
+    <a href="/categories/Technology/">Technology</a>
+  </div>
+
         
-      
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
       <div class="clearfix"></div>
     </footer>
   </div>
@@ -249,13 +278,38 @@
 
 
 
-  
-
-  <nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
+ <nav id="pagination" >
+    
+    <a href="/2017/01/02/经营模式的思考/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2016/10/11/2017-7-notes/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
 </nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zippera"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">

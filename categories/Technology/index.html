@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>杂文 | 十六少年渴望环游世界</title>
+  <title>Technology | 十六少年渴望环游世界</title>
   <meta name="author" content="Andy">
   
   
@@ -201,7 +201,7 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title category">杂文</h2>
+<h2 class="archive-title category">Technology</h2>
 
 
   
@@ -223,18 +223,109 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-07-23T03:48:19.000Z"><a href="/2017/07/23/Come-Back/">Jul 23 2017</a></time>
+        <time datetime="2017-01-09T03:40:01.000Z"><a href="/2017/01/09/IP粗浅了解/">Jan 9 2017</a></time>
       
       
   
-    <h1 class="title"><a href="/2017/07/23/Come-Back/">Come_Back</a></h1>
+    <h1 class="title"><a href="/2017/01/09/IP粗浅了解/">IP粗浅了解</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="来个头像避避邪233333"><a href="#来个头像避避邪233333" class="headerlink" title="来个头像避避邪233333"></a>来个头像避避邪233333</h1><p><img src="http://wx2.sinaimg.cn/small/006lGFvfgy1fhts83xufqj30hs0nojs6.jpg" alt=""></p>
+        <hr>
+<p>在理解互联网世界之前，我们需要了解它的一些重要协议。而这些协议工作在不同的层。<br>前辈们将互联网这样分层：</p>
+<blockquote>
+<p>physical layer</p>
+<p>link layer</p>
+<p>network layer</p>
+<p>transport layer</p>
+<p>application layer</p>
+</blockquote>
+<p>每一层都会完成相应的功能，我们都知道计算机网络最底层传输的是二进制0 1 信号。跟二进制联系相关度最高的就是physical layer 。我们的互联网需要将不同的pc连接起来。而物理性的连接，如通过光缆、电缆、双绞线、无线电。而这些容易让我们想到的什么呢，是的，网络的电气特性。传送 0 1 电信号。</p>
+<p><strong>单纯的脉冲信号是没有任何意义的，计算机之所以能够读懂一连串的的0 1 脉冲信号，在于我们人为的规定了特定的解析方式</strong>，</p>
+<p>而linker layer 便在physical layer 基础上确定了0 1 的分组方式，</p>
+<p>但是问题也来了。每个人的思维理解方式不同。不同的公司的工程师在思考如何解决这个问题的时候，最后用到的方法绝对不会一模一样。那他们两家公司产品出现交集，软件的统一性上便会出现问题。那么如何解决呢？</p>
+<p>所以出现了一些统一的规定，这就是<strong>以太网协议</strong>（针对电信号分组）<br>一组电信号构成一个数据包，called  frame 帧每一帧分两部分  <strong>标头head</strong> 和<strong>data</strong></p>
+<p>标头会对数据帧的一些数据进行描述比如发送者，接受者。data则是数据包的具体内容。</p>
+<p>标头长度固定 18个字节。 data 46-1500字节</p>
+<p>我们每一台计算机都必须的有网卡，在重装系统的时候，通常我们都是需要安装玩卡驱动的，这是为什么呢？<br>原来，以太网协议规定，我们在进行计算机间通讯的时候，数据包的传送必须的经过网卡、而网卡的地址就是mac地址。<br>mac地址：主机的物理标识地址<br>mac地址是单一无二的，长度是48个二进制位。通常由12个16进制数表示。</p>
+<p>厂商和流水号分割了这个十二个十六进制数，</p>
+<p>讲到这里我们已经明白了 linker layer 中的这种电信号分组原理。</p>
+<p>但是具体来讲，如何实施呢？  我们会得到一个这样的问题。</p>
+<p>mac地址是如何得到的呢？</p>
+<p>答案是同个arp广播。那很好，这样我们是不是就可以进行计算机间的通讯了呢？（事实上这样对于同一个网络的两台电脑是可以进行通讯的）。<br>不同网络呢？理论是可以的。技术上也是可以实现的。</p>
+<p>但是这样的arp广播优一个弊端：  arp风暴  </p>
+<p>它将极大的影响到网络的效率。问题来了,我们就得解决嘛。这就导致了<strong>Ip协议</strong>的诞生。什么是IP呢？</p>
+<p>我们通常说IPv4,是由32个二进制位构成的。我们通常都会看到一些像<br>192.168.1.3这样的东西，其实这个就是我们所说的ip地址。它由网络部分和主机部分构成。同一个网络的主机ip标识网络部分是会相同的。所以我们在利用计算机的子网掩码进行&amp;&amp;运算时，便能够判断计算机是否属于同一一个局域网。但是问题也来了，<strong>ip地址的分配是如何进行的呢？</strong></p>
+<p>这样就有了ip地址。（标识网络,分配了ip）这样也就有了<strong>网络层</strong>。</p>
+<p>我们也就完成了任意两台计算机间的通讯。</p>
+<p>但是现在问题由来了，你一台计算机会有很多的应用程序的，一台计算机发送数据的时候，你怎么判断它该交给那个程序呢？</p>
+<p>在计算机中便有了端口这个东西。也就实现了程序之间的通讯。而这就是Transport layer 干的事情。</p>
+<p>好，数据来了。程序接受到了数据。但是问题由来了，小明说看不懂小红写给他的小纸条。</p>
+<p>tcp这个东西就冒出来了。Transport control protcol 也就来到了我们的应用层，规定了程序的数据格式。</p>
+<p>这只是通信的一个大概轮廓。里面的很多东西还没有具体分析到。</p>
+<p>比如说：<br>1.端口间的通讯具体是怎么进行的呢？</p>
+<p>2.UDP协议具体是如何加入数据包中的呢？它的原理是怎么样的？</p>
+<p>3.tcp的3次握手，代码的具体实现是如何的？<br>等等</p>
 
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-10-24T09:38:05.000Z"><a href="/2016/10/24/processs-threads/">Oct 24 2016</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/10/24/processs-threads/">processs-threads illustrate</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Before we start talking about threads, processes, time slices, and all the other wonderful “scheduling concepts,” let’s establish an analogy.<br>What I want to do first is illustrate how threads and processes work.<br>The best way I can think of (short of digging into the design of a realtime system) is to imagine our threads and processes in some kind of situation.</p>
+<p>A process as a house</p>
+<p>Let’s base our analogy for processes and threads using a regular, everyday object — a house.<br>A house is really a container, with certain attributes (such as the amount of floor space, the number of bedrooms, and so on).<br>If you look at it that way, the house really doesn’t actively do anything on its own — it’s a passive object.<br>This is effectively what a process is. We’ll explore this shortly.</p>
+<p>The occupants as threads</p>
+<p>The people living in the house are the active objects — they’re the ones using the various rooms, watching TV,<br>cooking, taking showers, and so on. We’ll soon see that’s how threads behave.</p>
+<p>Single threaded</p>
+<p>If you’ve ever lived on your own, then you know what this is like — you know that you can do anything you want in the house at any time,<br>because there’s nobody else in the house. If you want to turn on the stereo, use the washroom, have dinner — whatever — you just go ahead and do it.</p>
+<p>Multi threaded</p>
+<p>Things change dramatically when you add another person into the house.<br>Let’s say you get married, so now you have a spouse living there too.<br>You can’t just march into the washroom at any given point; you need to check first to make sure your spouse isn’t in there!</p>
+<p>If you have two responsible adults living in a house,<br>generally you can be reasonably lax about “security” — you know that the other adult will respect your space,<br>won’t try to set the kitchen on fire (deliberately!), and so on.</p>
+<p>Now, throw a few kids into the mix and suddenly things get a lot more interesting.</p>
+<pre><code>source:    http://www.qnx.com/developers/docs/6.4.1/neutrino/getting_started/s1_procs.html#Fundamentals
+        http://www.ruanyifeng.com/blog/2016/10/online_education.html
+</code></pre>
       
     </div>
     <footer>
